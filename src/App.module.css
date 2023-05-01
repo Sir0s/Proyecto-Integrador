@@ -1,43 +1,40 @@
-.app {
-   max-width: 800px;
-   margin: 0 auto;
-   padding: 20px;
-   background-color: #f7f7f7;
-   border-radius: 10px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- }
- 
- .app h1 {
-   font-size: 2rem;
-   color: #7c37ad;
-   margin-bottom: 20px;
- }
- 
- .app input {
-   font-size: small;
-   padding: 10px;
-   border-radius: 5px;
-   border: none;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-   margin-bottom: 20px;
- }
- 
- .app input:focus {
-   outline: none;
-   box-shadow: 0 0 5px rgba(124, 55, 173, 0.5);
- }
- 
- .app button {
-   font-size: 1.2rem;
-   padding: 10px 20px;
-   border-radius: 5px;
-   border: none;
-   background-color: #7c37ad;
-   color: #fff;
-   cursor: pointer;
-   margin-left: auto;
- }
- 
- .app button:hover {
-   background-color: #5f1a8f;
- }
+.app{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+h1 {
+  font-size: 2rem;
+  color: #7c37ad;
+  margin-bottom: 10px;
+}
+
+input {
+  background-color: rgb(52, 0, 129);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(124, 55, 173, 0.5);
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #7c37ad;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5f1a8f;
+}

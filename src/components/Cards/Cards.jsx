@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from '../Card/Card';
 import styles from './Cards.module.css'
 export default function Cards({characters}) {
    return (
@@ -9,10 +9,10 @@ export default function Cards({characters}) {
          <Card 
          id={id} 
          name = {name} 
-         status = {status}
+         /*status = {status}
          species={species}
          gender={gender}
-         origin={origin.name}
+         origin={origin.name}*/
          image={image}
          onClose={()=>window.alert('Emulamos que se cierra la card '+id)}
           />

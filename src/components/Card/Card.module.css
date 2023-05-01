@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  padding : 1rem;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+ 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #9746c0;
+  margin: 10px 0;
+}
+img {
+  max-width: fit-content;
+  max-height: fit-content;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.boton {
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out;
+}
+.card:hover .boton {
+  visibility: visible;
+}
