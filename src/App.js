@@ -7,6 +7,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Detail from './components/Detail/Detail';
 import About from './components/About/About';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 
 
 
@@ -58,14 +59,19 @@ function App() {
  
 const {pathname} = useLocation();
   return (
+    
     <div className={styles.app}>
       {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
-        <Route path='/' element={<Form login={login}/>} />  
-        <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
-        <Route path='/about' element={<About/>} />
-        <Route path='/detail/:id' element={<Detail/>} />
-        
+      <Route path='/' element={<Form login={login}/>} />  
+      {access && (
+        <>
+          <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+          <Route path='/about' element={<About/>} />
+          <Route path='/detail/:id' element={<Detail/>} />
+          <Route path = "/favorites" element={<Favorites />} />
+        </>
+      )}
       </Routes>    
     </div>
   );

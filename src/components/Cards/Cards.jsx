@@ -4,20 +4,22 @@ import styles from './Cards.module.css'
 export default function Cards({characters,onClose}) {
    return (
    <div className={styles.cards}>{
-      characters.map(({id,name,status,origin,species,gender,image}) =>
+      characters.map((props) =>
       {
          return (
-         <Card 
-         key={id}
-         id={id} 
-         name = {name} 
-         /*status = {status}
-         species={species}
-         gender={gender}
-         origin={origin.name}*/
-         image={image}
-         onClose={onClose}
-          />
+         <Card
+         key={props.id}
+         id={props.id} 
+         name = {props.name} 
+         status = {props.status}
+         species={props.species}
+         gender={props.gender}
+         origin={props.origin.name}
+         image={props.image}
+         onClose={props.onClose}>
+         {props.name}
+         
+         </Card>
          )
       })
    }
