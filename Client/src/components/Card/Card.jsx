@@ -35,7 +35,10 @@ function Card(props) {
       <button className={styles.boton} onClick={() => props.onClose(props.id)}>
         X
       </button>
-      <img className={styles.image} src={props.image} alt="" />
+      <Link to={`/detail/${props.id}`}>
+      <img className={styles.image} src={props.image} alt={props.name} />
+      </Link>
+      
       <Link to={`/detail/${props.id}`}>
         <h2 className="card-name">{props.name}</h2>
       </Link>

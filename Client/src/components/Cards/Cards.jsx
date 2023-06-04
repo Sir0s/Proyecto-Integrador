@@ -9,16 +9,17 @@ export default function Cards({characters,onClose}) {
       {
          return (
          <Card
-         key={props.id}
-         id={props.id} 
-         name = {props.name} 
-         status = {props.status}
-         species={props.species}
-         gender={props.gender}
-         origin={props.origin.name}
-         image={props.image}
-         onClose={onClose}>
-         {props.name}
+           key={props.id}
+           id={props.id} 
+           name = {props.name} 
+           status = {props.status}
+           species={props.species}
+           gender={props.gender}
+           origin={props.origin.name}
+           image={props.image}
+           onClose={onClose}
+         >
+            {props.name}
          
          </Card>
          )

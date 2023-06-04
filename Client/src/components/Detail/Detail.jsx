@@ -6,7 +6,8 @@ const Detail = ()=>{
     const {id} = useParams()
     const [characters, setCharacters] = useState()
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({data}) => {
+      // luego cambiar la url por el local host del servidor : `http://localhost:3001/rickandmorty/character/${id}`
+        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({data}) => {
            if (data.name) {
               setCharacters(data);
            } else {

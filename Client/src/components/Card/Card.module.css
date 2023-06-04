@@ -11,11 +11,18 @@
 
 }
 
-.card:hover {
+
+.card:hover  {
   cursor: pointer;
-  
   transform: translateY(-10px);
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.card :not(:hover)  {
+  cursor: pointer;
+  opacity: 93%;
+
 }
 
 h2 {
@@ -30,6 +37,7 @@ img {
   margin-top: 5px;
   border-radius: 5px;
 }
+
 .boton {
     border-radius: 50%;
     font-size: 20px;
