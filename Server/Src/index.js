@@ -1,16 +1,18 @@
-const http = require ('http');
+const express = require('express');
+const server = express();
 const PORT = 3001;
-const data = require('./Routes/Utils/data.js');
-const getCharById = require('./Routes/Controllers/getCharById.js');
 
-http.createServer((require,response)=> {
-    response.setHeader('Access-Control-Allow-Origin','*')
-    const {url} = require;
-    
-    if (url.includes("/rickandmorty/character")){
-        const id = url.split("/").at(-1);
-        return getCharById(response,id);
-    }
-}).listen(PORT, ()=>{
-    console.log("Servidor escuchando en puerto "+PORT)
+server.use((req,res,next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    next(); 
 })
+
+server.listen(PORT, ()=>{
+    console.log('Servidor escuchando en el puerto '+PORT)
+});
