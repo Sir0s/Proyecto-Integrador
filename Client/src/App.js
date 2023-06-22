@@ -19,25 +19,28 @@ function App() {
   const email = 'mail@mail.com';
   const password = '123456';
 
-
+  async function login(userData) {
+    try {
+       const { email, password } = userData;
+       const URL = 'http://localhost:3001/rickandmorty/login/';
+       const { data } = await axios(URL + `?email=${email}&password=${password}`)
+       const { access } = data;
+       setAccess(data);
+       access ? navigate('/home'): window.alert("User or pass invalid")
+    } catch (error) {
+       console.log(error)
+    }
+ }
 
   /*-------------------------------------------------------------*/
-  function onSearch(id) {
-    // luego cambiar la url por el local host del servidor : `http://localhost:3001/rickandmorty/character/${id}`  
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          if (characters.some((char) => char.id === data.id)) {
-            window.alert("¡Este personaje ya está en la lista!");
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
-      }
-    );
-  }
+  async function onSearch(id) {
+    try {
+       const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+       setCharacters((oldChars) => [...oldChars, data]);
+    } catch (error) {
+       window.alert(error.response.data);
+    }
+ }
 
   /*----------------------------------------------------------------------*/
   function onClose(id) {
