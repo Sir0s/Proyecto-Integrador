@@ -1,3 +1,4 @@
+import styles from "./Detail.module.css"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {Link, useParams} from "react-router-dom";
@@ -20,15 +21,16 @@ const Detail = ()=>{
 
      return(
         <>
-         <Link to ="/home"><h1> Back</h1></Link>
+       <Link to ="/home"><button className={styles.boton}>Back</button></Link>
         {characters?.name ?(
-     <div>  
+     <div className={styles.detail}>  
+     
      <img  src={characters.image} alt={characters.name} />
-     <h2> {characters.name} </h2>
-     <h2> {characters.status} </h2>
-     <h2> {characters.species} </h2>
-     <h2> {characters.gender} </h2>
-     <h2> {characters.origin.name} </h2>
+     <h2> Nombre: {characters.name} </h2>
+     <h2> Status: {characters.status} </h2>
+     <h2> Species: {characters.species} </h2>
+     <h2> Gender: {characters.gender} </h2>
+     <h2> Origin: {characters.origin.name} </h2>
    </div>   
     ) : <div>Loading</div>}
   

@@ -1,13 +1,13 @@
-h1{
-    color: #9746c0;
-    
-}
-p{
-    
+.About{ 
+    margin: 2px;
+    height: 100vmax;
+    border: 3px solid black;
     color: #9746c0;
     font-size: large;
     padding: 12px;
-    margin: 5px;
-    justify-self: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+h1{
+    display: flex;
+    justify-content: center;
 }

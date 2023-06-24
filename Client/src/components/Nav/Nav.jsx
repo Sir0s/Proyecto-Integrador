@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./Nav.module.css";
 import SearchBar from "../SearchBar/SearchBar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const Nav = ({ onSearch }) => {
+  
   const { pathname } = useLocation();
-  const showSearchBar = pathname !== "/favorites";
-
+  const id = pathname.replace(/\D/g, "");
+  const showSearchBar = (pathname !== "/favorites" && pathname !== "/about" && pathname !=="/detail/"+id);
+  
   return (
     <div className={styles.Nav}>
       <Link to="/home">

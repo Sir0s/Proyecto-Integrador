@@ -22,20 +22,23 @@ const handleChange = (event) => {
  }
     
 return (
-    <div>
-    <form onSubmit={handleSubmit}>
-        <label>Email:  </label>
-        <input type="email" placeholder="Email..." name="email" value={userData.email} onChange={handleChange}/>
+    <div >
+    
+    <form className={styles.box}  onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        
+        <label>Email:</label><input type="email" placeholder="Email..." name="email" value={userData.email} onChange={handleChange}/>
         {
             errors.email ? ( <p>{errors.email}</p> ) : null
         }
-    <div>
+        
+    
         <label>Password:  </label>
         <input type="password" placeholder="Password..."  name="password" value={userData.password} onChange={handleChange}/>
         {
             errors.password ? ( <p>{errors.password}</p> ) : null
         }
-    </div>
+    
     <button>Submit</button>
     </form>
     </div>

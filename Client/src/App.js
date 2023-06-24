@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import styles from './App.module.css'
 import Cards from './components/Cards/Cards.jsx';
@@ -16,8 +16,8 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false)
   const navigate = useNavigate();
-  const email = 'mail@mail.com';
-  const password = '123456';
+  //const email = 'mail@mail.com';
+  //const password = '123456';
 
   async function login(userData) {
     try {
@@ -36,9 +36,15 @@ function App() {
   async function onSearch(id) {
     try {
        const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
-       setCharacters((oldChars) => [...oldChars, data]);
+       if (data.name) {
+        if (characters.some((char) => char.id === data.id)) {
+          window.alert("¡Este personaje ya está en la lista!");
+        } else {
+          setCharacters((oldChars) => [...oldChars, data]);
+        }
+      }
     } catch (error) {
-       window.alert(error.response.data);
+      window.alert(error.response.data);
     }
  }
 
@@ -49,17 +55,17 @@ function App() {
   }
 
 
-  function login(userData) {
+  /* function login(userData) {
     if (userData.password === password && userData.email === email) {
-       setAccess(true);
-       navigate('/home');
+      setAccess(true);
+      navigate("/home");
     }
- }
+  }
  
  useEffect(() => {
    !access && navigate('/');
  }, [access]);
-
+ */
  
 const {pathname} = useLocation();
   return (
